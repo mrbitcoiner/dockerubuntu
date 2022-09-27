@@ -22,7 +22,10 @@ sudo apt update
 sudo apt install -y \
     docker-ce docker-ce-cli containerd.io
 
-sudo curl -L "https://github.com/docker/compose/releases/download/2.11.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+os=$(uname -s)
+os_lowercase=${os,,}
+
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.11.1/docker-compose-${os_lowercase}-$(uname -m)" -o /usr/local/bin/docker-compose
 
 sudo chmod +x /usr/local/bin/docker-compose
 
